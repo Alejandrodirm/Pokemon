@@ -1,0 +1,45 @@
+<%- include("templates/cabecera.ejs", {cabecera:'Panel de Administración'}) %>
+    <div class="container">
+        <h1>Lista de entrenadores</h1>
+        <div class="row">
+            <div class="col-6"><a class="btn btn-success btn-block my-4" href="/entrenador/crearentrenador">Añadir un
+                    entrenador</a></div>
+            <div class="col-6"><a class="btn btn-success btn-block my-4" href="/">Volver</a></div>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Región</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayEntrenador.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayEntrenador.forEach(entrenador=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= entrenador.id %>
+                            </th>
+                            <td>
+                                <%= entrenador.nombre %>
+                            </td>
+                            <td>
+                                <%= entrenador.ciudad%>
+                            </td>
+                            <td>
+                                <%= entrenador.region %>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include("templates/footer.ejs") %>
