@@ -16,6 +16,9 @@ router.get('/', async (req, res) => {
         console.error(error)
     }
 })
+router.get('/crear', (req, res) => {
+    res.render('crear'); //nueva vista que llamaremos Crear
+})
 router.get('/:id', async (req, res) => { //El id vendrá por el GET (barra de direcciones)
     const id = req.params.id //Recordemos que en la plantilla "pokemon.ejs" le pusimos
     //a este campo pokemon.id, por eso lo llamados con params.id
@@ -37,9 +40,7 @@ router.get('/:id', async (req, res) => { //El id vendrá por el GET (barra de di
     }
 })
 
-router.get('/crear', (req, res) => {
-    res.render('crear'); //nueva vista que llamaremos Crear
-})
+
 router.post('/', async (req, res) => {
     const body = req.body //Gracias al body parser, de esta forma
     //podremos recuperar todo lo que viene del body

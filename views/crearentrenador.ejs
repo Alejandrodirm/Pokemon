@@ -1,6 +1,7 @@
-<%- include("templates/cabecera", {cabecera: 'Nuevo Entrenador' }) %>
+<%- include("template/cabecera", {titulo: 'Nuevo Entrenador' }) %>
 
     <div class="container">
+        <div><a class="btn btn-success btn-block my-4" href="/">Volver</a></div>
         <h1>Añadir nuevo entrenador</h1>
         <form action="/entrenador" class="my-2" method="POST">
             <input type="text" placeholder="Nombre del Entrenador" class="form-control my-2" name="nombre">
@@ -11,4 +12,4 @@
             </button>
         </form>
     </div>
-    <%- include("templates/footer") %>
+    <%- include("template/footer") %>

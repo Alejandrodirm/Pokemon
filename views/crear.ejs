@@ -1,7 +1,8 @@
 
-<%- include("template/cabecera.ejs", {titulo:'Añadir Pokemon'}) %>
+<%- include("template/cabecera", {titulo:'Añadir Pokemon'}) %>
 
 <div class="container">
+    <div><a class="btn btn-success btn-block my-4" href="/">Volver</a></div>
     <h1>Crear nuevo Pokemon</h1>
     <form action="/pokemon" class="my-2" method="POST">
         <input type="text" placeholder="Nombre Pokemon" class="form-control my-2" name="nombre">

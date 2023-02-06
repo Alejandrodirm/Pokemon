@@ -33,7 +33,7 @@ router.get('/:id', async(req, res) => {
     try {
         const entrenadorDB = await Entrenador.findOne({ _id: id }) 
         console.log(entrenadorDB)
-        res.render('infoEntrenador', { 
+        res.render('detalleEntrenador', { 
             entrenador: entrenadorDB,
             error: false
         })
